@@ -1,7 +1,7 @@
 var Campground = require("../models/campground"),
     Comment = require("../models/comment");
 
-// all the middleare goes here
+// all the middleware goes here
 var middlewareObj = {};
 
 middlewareObj.checkCampgroundOwnership = function(req, res, next) {
@@ -32,7 +32,7 @@ middlewareObj.checkCommentOwnership = function(req, res, next) {
            if(err){
                res.redirect("back");
            }  else {
-               // does user own the comment?
+               //user comments
             if(foundComment.author.id.equals(req.user._id)) {
                 next();
             } else {
@@ -46,7 +46,7 @@ middlewareObj.checkCommentOwnership = function(req, res, next) {
         res.redirect("back");
     }
 }
-
+//middle
 middlewareObj.isLoggedIn = function(req, res, next){
     if(req.isAuthenticated()){
         return next();
