@@ -1,7 +1,7 @@
-var express = require("express");
-var router  = express.Router();
-var Campground = require("../models/campground");
-var middleware = require("../middleware");
+var express = require("express"),
+    router  = express.Router(),
+    Campground = require("../models/campground"),
+    middleware = require("../middleware");
 
 
 //INDEX - show all campgrounds
