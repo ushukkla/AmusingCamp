@@ -1,9 +1,9 @@
-const express = require("express");
-const router  = express.Router({mergeParams: true});
-const Campground = require("../models/campground");
-const Comment = require("../models/comment");
-const middleware = require("../middleware");
-const { isLoggedIn, checkUserComment, isAdmin } = middleware;
+var express = require("express");
+var router  = express.Router({mergeParams: true});
+var Campground = require("../models/campground");
+var Comment = require("../models/comment");
+var middleware = require("../middleware");
+var { isLoggedIn, checkUserComment, isAdmin } = middleware;
 
 //Comments New
 router.get("/new", isLoggedIn, function(req, res){
